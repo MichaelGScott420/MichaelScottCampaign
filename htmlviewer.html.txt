@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Michael G. Scott for Office — Democrat</title>
+  <meta name="description" content="Michael G. Scott is running as a Democrat. Limited Intervention abroad, School Choice, Equal Rights, Universal Healthcare, Safe/Legal/Rare abortion, Background Checks, Debt Hawk budgeting, and Moderate Conservation." />
+  <style>
+    :root{
+      --bg:#0b1324;
+      --panel:#111c33;
+      --panel2:#0f1a31;
+      --text:#e8eefc;
+      --muted:#a9b6d8;
+      --line:rgba(255,255,255,.10);
+      --accent:#3b82f6;
+      --accent2:#60a5fa;
+      --good:#22c55e;
+      --warn:#f59e0b;
+      --danger:#ef4444;
+      --shadow: 0 14px 40px rgba(0,0,0,.35);
+      --radius: 18px;
+      --radius2: 26px;
+      --max: 1100px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family:var(--font);
+      background:
+        radial-gradient(1200px 700px at 70% -10%, rgba(59,130,246,.25), transparent 55%),
+        radial-gradient(900px 600px at 10% 10%, rgba(96,165,250,.15), transparent 60%),
+        linear-gradient(180deg, #070d1a, var(--bg) 35%, #070d1a);
+      color:var(--text);
+      letter-spacing:.2px;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding:22px 18px 60px; }
+
+    /* Top nav */
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:14px 16px;
+      border:1px solid var(--line);
+      background:rgba(17,28,51,.65);
+      backdrop-filter: blur(10px);
+      border-radius:var(--radius2);
+      box-shadow: var(--shadow);
+      position:sticky;
+      top:14px;
+      z-index:10;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width: 220px;
+    }
+    .seal{
+      width:40px; height:40px;
+      border-radius:50%;
+      background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.25), transparent 45%),
+                  linear-gradient(135deg, rgba(59,130,246,.95), rgba(96,165,250,.55));
+      border:1px solid rgba(255,255,255,.18);
+      display:grid; place-items:center;
+      font-weight:900;
+      box-shadow: 0 8px 24px rgba(59,130,246,.25);
+    }
+    .brand h1{
+      margin:0;
+      font-size:14px;
+      line-height:1.1;
+      letter-spacing:.6px;
+      text-transform:uppercase;
+    }
+    .brand p{
+      margin:2px 0 0;
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    .navlinks{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 12px;
+      border:1px solid var(--line);
+      background:rgba(15,26,49,.6);
+      border-radius:999px;
+      color:var(--text);
+      font-size:13px;
+      transition: transform .12s ease, border-color .12s ease, background .12s ease;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .pill:hover{ transform: translateY(-1px); border-color: rgba(96,165,250,.45); background: rgba(15,26,49,.9); }
+    .pill.primary{
+      background: linear-gradient(135deg, rgba(59,130,246,.95), rgba(96,165,250,.75));
+      border-color: rgba(255,255,255,.22);
+      box-shadow: 0 10px 26px rgba(59,130,246,.25);
+      font-weight:700;
+    }
+
+    /* Hero */
+    .hero{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:16px;
+      align-items:stretch;
+    }
+    @media (max-width: 960px){
+      .hero{ grid-template-columns: 1fr; }
+      .brand{ min-width: unset; }
+    }
+
+    .card{
+      border:1px solid var(--line);
+      background: rgba(17,28,51,.65);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .heroMain{
+      padding:22px 22px 18px;
+      background:
+        radial-gradient(700px 260px at 20% 0%, rgba(59,130,246,.25), transparent 60%),
+        radial-gradient(700px 280px at 85% 20%, rgba(96,165,250,.18), transparent 65%),
+        rgba(17,28,51,.55);
+    }
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:7px 11px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(15,26,49,.55);
+      font-size:12px;
+      color:var(--muted);
+    }
+    .kicker b{ color:var(--text); }
+
+    .heroMain h2{
+      margin:14px 0 10px;
+      font-size:38px;
+      line-height:1.05;
+      letter-spacing:.3px;
+    }
+    .heroMain .sub{
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.6;
+      max-width: 62ch;
+      margin:0 0 16px;
+    }
+
+    .heroCtas{ display:flex; gap:10px; flex-wrap:wrap; }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:11px 14px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(15,26,49,.75);
+      color:var(--text);
+      font-weight:650;
+      font-size:14px;
+      cursor:pointer;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+    }
+    .btn:hover{ transform: translateY(-1px); border-color: rgba(96,165,250,.45); background: rgba(15,26,49,.95); }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(59,130,246,.95), rgba(96,165,250,.8));
+      border-color: rgba(255,255,255,.22);
+    }
+    .btn.ghost{
+      background: transparent;
+    }
+
+    .heroSide{
+      padding:18px;
+      display:grid;
+      gap:12px;
+      background: rgba(15,26,49,.55);
+    }
+    .portrait{
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.14);
+      background:
+        radial-gradient(circle at 30% 20%, rgba(255,255,255,.22), transparent 50%),
+        linear-gradient(180deg, rgba(59,130,246,.22), rgba(15,26,49,.85));
+      overflow:hidden;
+      position:relative;
+      min-height: 190px;
+      display:grid;
+      place-items:center;
+      text-align:center;
+      padding:16px;
+    }
+    .portrait img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius: 14px;
+      opacity:.98;
+    }
+    .portrait .note{
+      position:absolute;
+      bottom:10px;
+      left:10px;
+      right:10px;
+      font-size:12px;
+      color:rgba(255,255,255,.82);
+      background: rgba(0,0,0,.35);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius: 12px;
+      padding:8px 10px;
+      backdrop-filter: blur(8px);
+    }
+    .statbar{
+      display:grid;
+      gap:8px;
+    }
+    .stat{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:10px 12px;
+      border:1px solid var(--line);
+      background: rgba(17,28,51,.55);
+      border-radius: 16px;
+      font-size:13px;
+    }
+    .stat span{ color:var(--muted); }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(15,26,49,.6);
+      font-size:12px;
+      color:var(--muted);
+      justify-self:start;
+    }
+
+    /* Sections */
+    section{ margin-top:18px; }
+    .sectionTitle{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:12px;
+      margin: 14px 2px 10px;
+    }
+    .sectionTitle h3{
+      margin:0;
+      font-size:20px;
+      letter-spacing:.2px;
+    }
+    .sectionTitle p{
+      margin:0;
+      font-size:13px;
+      color:var(--muted);
+      max-width: 65ch;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+    }
+    .col-6{ grid-column: span 6; }
+    .col-4{ grid-column: span 4; }
+    .col-12{ grid-column: span 12; }
+    @media (max-width: 980px){
+      .col-6, .col-4{ grid-column: span 12; }
+    }
+
+    .plank{
+      padding:16px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: rgba(17,28,51,.55);
+      box-shadow: 0 10px 30px rgba(0,0,0,.20);
+      position:relative;
+      overflow:hidden;
+    }
+    .plank:before{
+      content:"";
+      position:absolute;
+      inset:-80px -100px auto auto;
+      width:220px;
+      height:220px;
+      background: radial-gradient(circle, rgba(59,130,246,.20), transparent 62%);
+      transform: rotate(12deg);
+      pointer-events:none;
+    }
+    .plank h4{
+      margin:0 0 6px;
+      font-size:16px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .plank p{
+      margin:0;
+      color:var(--muted);
+      font-size:13.5px;
+      line-height:1.55;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(15,26,49,.7);
+      color:rgba(255,255,255,.9);
+      font-size:12px;
+      margin-top:10px;
+    }
+    .badge .dot{
+      width:10px; height:10px;
+      border-radius:50%;
+      background: var(--accent2);
+      box-shadow: 0 0 0 4px rgba(96,165,250,.15);
+    }
+
+    /* Footer CTA */
+    .cta{
+      margin-top:18px;
+      padding:18px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:14px;
+      align-items:stretch;
+      background:
+        radial-gradient(700px 260px at 20% 0%, rgba(59,130,246,.22), transparent 60%),
+        rgba(17,28,51,.65);
+    }
+    @media (max-width: 960px){
+      .cta{ grid-template-columns:1fr; }
+    }
+    .cta h3{ margin:0 0 6px; font-size:20px; }
+    .cta p{ margin:0; color:var(--muted); line-height:1.6; font-size:13.5px; }
+    form{
+      display:grid;
+      gap:10px;
+      padding:14px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: rgba(15,26,49,.55);
+    }
+    .row{ display:grid; grid-template-columns: 1fr 1fr; gap:10px; }
+    @media (max-width: 620px){ .row{ grid-template-columns:1fr; } }
+    label{ font-size:12px; color:var(--muted); display:block; margin:0 0 6px; }
+    input, select, textarea{
+      width:100%;
+      padding:11px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(7,13,26,.55);
+      color: var(--text);
+      outline:none;
+      font-size:14px;
+    }
+    input::placeholder, textarea::placeholder{ color: rgba(169,182,216,.65); }
+    textarea{ min-height: 86px; resize: vertical; }
+
+    .fineprint{
+      margin-top:14px;
+      color: rgba(169,182,216,.7);
+      font-size:12px;
+      line-height:1.5;
+    }
+    .divider{
+      height:1px;
+      background: var(--line);
+      margin: 12px 0 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="nav" aria-label="Campaign navigation">
+      <div class="brand">
+        <div class="seal" aria-hidden="true">MG</div>
+        <div>
+          <h1>Michael G. Scott</h1>
+          <p>Democratic Candidate • “Somehow, I manage.”</p>
+        </div>
+      </div>
+
+      <nav class="navlinks" aria-label="Primary">
+        <a class="pill" href="#platform">Platform</a>
+        <a class="pill" href="#priorities">Top Priorities</a>
+        <a class="pill" href="#join">Get Involved</a>
+        <a class="pill primary" href="#donate">Donate</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero">
+        <section class="card heroMain" aria-label="Hero">
+          <span class="kicker">
+            <b>Democrat</b> • Practical progress • Big heart • (World’s Best Boss energy)
+          </span>
+
+          <h2>Michael G. Scott<br/>for Office</h2>
+
+          <p class="sub">
+            A platform built on common-sense compassion: protect equal rights, expand healthcare,
+            keep communities safe, and stay fiscally responsible — while being a <em>moderate conservationist</em>
+            who actually likes parks.
+          </p>
+
+          <div class="heroCtas">
+            <a class="btn primary" href="#platform">Read the Platform</a>
+            <a class="btn" href="#join">Volunteer</a>
+            <a class="btn ghost" href="#donate">Donate</a>
+          </div>
+
+          <div class="divider"></div>
+          <p class="fineprint">
+           
+          </p>
+        </section>
+
+        <aside class="card heroSide" aria-label="Candidate card">
+          <div class="portrait">
+  <img src="https://i.redd.it/0szk1qh5vo981.jpg" alt="Michael G. Scott campaign photo">
+</div>
+            </div>
+            <div class="note"></div>
+          </div>
+
+          <div class="tag">Platform</div>
+
+          <div class="statbar" aria-label="Quick stance summary">
+            <div class="stat"><span>Foreign Policy</span><b>Limited Intervention</b></div>
+            <div class="stat"><span>Education</span><b>School Choice</b></div>
+            <div class="stat"><span>Gay Marriage</span><b>Equal Rights</b></div>
+            <div class="stat"><span>Healthcare</span><b>Universal Healthcare</b></div>
+            <div class="stat"><span>Conservation</span><b>Moderate Conservationist</b></div>
+            <div class="stat"><span>Abortion</span><b>Safe, Legal, Rare</b></div>
+            <div class="stat"><span>Gun Policy</span><b>Background Checks</b></div>
+            <div class="stat"><span>Budget</span><b>Debt Hawk</b></div>
+          </div>
+        </aside>
+      </div>
+
+      <section id="platform" aria-label="Platform">
+        <div class="sectionTitle">
+          <h3>Platform</h3>
+          <p>Seven issue stances that shape the campaign’s social and economic direction.</p>
+        </div>
+
+        <div class="grid">
+          <article class="plank col-6">
+            <h4>🌍 Foreign Policy: Limited Intervention</h4>
+            <p>
+              Keep America strong and smart: defend allies, deter threats, and prioritize diplomacy.
+              Use military force only when it’s absolutely necessary, clearly defined, and accountable.
+            </p>
+            <div class="badge"><span class="dot"></span>“Talk first. Act decisively if we must.”</div>
+          </article>
+
+          <article class="plank col-6">
+            <h4>🎓 Education: School Choice</h4>
+            <p>
+              Empower families with more high-quality options — public, charter, magnet, and vocational paths —
+              while protecting transparency, accessibility, and basic standards so every kid can thrive.
+            </p>
+            <div class="badge"><span class="dot"></span>Choice + standards + fairness</div>
+          </article>
+
+          <article class="plank col-6">
+            <h4>🏳️‍🌈 Gay Marriage: Equal Rights</h4>
+            <p>
+              Equal rights are non-negotiable. Protect marriage equality and ensure LGBTQ+ Americans
+              can live, work, and build families without discrimination.
+            </p>
+            <div class="badge"><span class="dot"></span>Freedom means everyone</div>
+          </article>
+
+          <article class="plank col-6">
+            <h4>🩺 Healthcare: Universal Healthcare</h4>
+            <p>
+              Healthcare is a right, not a perk. Build a system that covers everyone,
+              controls costs, improves outcomes, and reduces the paperwork nightmare
+              (Michael loves paper, but not <em>that</em> kind).
+            </p>
+            <div class="badge"><span class="dot"></span>Coverage for all</div>
+          </article>
+
+          <article class="plank col-6">
+            <h4>🌲 Conservation: Moderate Conservationist</h4>
+            <p>
+              Protect air, water, and public lands with pragmatic policies that also respect jobs and local economies.
+              Invest in resilience, efficiency, and clean innovation without “all-or-nothing” extremes.
+            </p>
+            <div class="badge"><span class="dot"></span>Practical stewardship</div>
+          </article>
+
+          <article class="plank col-6">
+            <h4>⚖️ Abortion: Safe, Legal, Rare</h4>
+            <p>
+              Support access to safe and legal abortion while reducing unintended pregnancies through education,
+              healthcare access, and support for families — focusing on compassion and real-world outcomes.
+            </p>
+            <div class="badge"><span class="dot"></span>Access + prevention + support</div>
+          </article>
+
+          <article class="plank col-6">
+            <h4>🛡️ Gun Policy: Background Checks</h4>
+            <p>
+              Respect responsible ownership and protect communities with universal background checks,
+              improved enforcement, and closing obvious loopholes — safety without demonizing lawful owners.
+            </p>
+            <div class="badge"><span class="dot"></span>Rights + responsibility</div>
+          </article>
+
+          <article class="plank col-6">
+            <h4>💰 Fiscal Solvency: Debt Hawk</h4>
+            <p>
+              Be honest about budgets: pay for what we pass, cut waste, and invest where returns are real.
+              Strong public services and long-term fiscal responsibility can coexist — it’s not either/or.
+            </p>
+            <div class="badge"><span class="dot"></span>Spend smart. Pay your bills.</div>
+          </article>
+        </div>
+      </section>
+
+      <section id="priorities" aria-label="Top priorities">
+        <div class="sectionTitle">
+          <h3>Top Priorities</h3>
+          <p></p>
+        </div>
+
+        <div class="grid">
+          <article class="plank col-4">
+            <h4>✅ Results, Not Drama</h4>
+            <p>Focus on deliverables: coverage, safety, rights, and solvency — with less chaos and more follow-through.</p>
+          </article>
+          <article class="plank col-4">
+            <h4>🤝 Big Tent Democrat</h4>
+            <p>Protect core freedoms while welcoming practical ideas (like school choice with guardrails).</p>
+          </article>
+          <article class="plank col-4">
+            <h4>🧾 Accountability</h4>
+            <p>Clear goals, measurable progress, and responsible budgeting — because “bankrupt” is not a vibe.</p>
+          </article>
+          <article class="plank col-12">
+            <h4>🗣️ The Campaign Motto</h4>
+            <p>
+              <strong>“Make it work. Make it fair. Make it count.”</strong>
+              <span style="color:var(--muted);"> (That’s what she said… about good governance.)</span>
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="card cta" id="join" aria-label="Get involved">
+        <div>
+          <h3>Get Involved</h3>
+          <p>
+            Want updates, volunteer info, or yard-sign energy? Join the list.
+            (No spam. Unless Dwight is running the email server.)
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="fineprint">
+            
+          </div>
+        </div>
+
+        <form onsubmit="event.preventDefault(); alert('Thanks! (Mock form) Your info was not submitted anywhere.');">
+          <div class="row">
+            <div>
+              <label for="first">First name</label>
+              <input id="first" name="first" type="text" placeholder="Michael" autocomplete="given-name" required />
+            </div>
+            <div>
+              <label for="last">Last name</label>
+              <input id="last" name="last" type="text" placeholder="Scott" autocomplete="family-name" required />
+            </div>
+          </div>
+
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="michael@dundermifflin.com" autocomplete="email" required />
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="interest">I want to…</label>
+              <select id="interest" name="interest">
+                <option>Volunteer</option>
+                <option>Host an event</option>
+                <option>Get campaign updates</option>
+                <option>Request a yard sign</option>
+              </select>
+            </div>
+            <div>
+              <label for="zip">ZIP</label>
+              <input id="zip" name="zip" inputmode="numeric" placeholder="90210" autocomplete="postal-code" />
+            </div>
+          </div>
+
+          <div>
+            <label for="msg">Message (optional)</label>
+            <textarea id="msg" name="msg" placeholder="How can I help?"></textarea>
+          </div>
+
+          <button class="btn primary" type="submit">Join the Campaign</button>
+        </form>
+      </section>
+
+      <section id="donate" aria-label="Donate">
+        <div class="sectionTitle">
+          <h3>Donate</h3>
+          <p></p>
+        </div>
+
+        <div class="grid">
+          <div class="plank col-12">
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <button class="btn" onclick="alert('Mock donate: $5');">$5</button>
+              <button class="btn" onclick="alert('Mock donate: $25');">$25</button>
+              <button class="btn" onclick="alert('Mock donate: $50');">$50</button>
+              <button class="btn" onclick="alert('Mock donate: $100');">$100</button>
+              <button class="btn primary" onclick="alert('Mock donate: Custom');">Custom</button>
+            </div>
+            <div class="fineprint">
+              By donating you agree to our terms of service. Michael G. Scott reserves the right to pocket donations for personal use.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Smooth scroll for in-page links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        const el = document.querySelector(id);
+        if (!el) return;
+        e.preventDefault();
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+</body>
+</html>
